@@ -9,7 +9,7 @@ header {
     text-align: center;
 }
 
-.button-xlarge {
+.createBtn {
     font-size: 85%;
     margin: 5px;
     width: 80%;
@@ -24,7 +24,16 @@ section {
     flex-direction: row;
 }
 
-aside {
+.firstAside {
+    text-align: center;
+    margin: 10px;
+    background-color: white;
+    height: 240.97px;
+    width: 50%;
+    border:1px solid #424949;
+}
+
+.secondAside {
     text-align: center;
     margin: 10px;
     background-color: white;
