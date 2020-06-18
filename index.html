@@ -6,10 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Find a Park</title>
 
-    <link rel="stylesheet" href="assets/style.css">
+    
     <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.3/build/pure-min.css"
         integrity="sha384-cg6SkqEOCV1NbJoCu11+bm0NvBRc8IYLRGXkmNrqUBfTjmMYwNKPWBTIKyw9mHNJ" crossorigin="anonymous">
     <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.1/build/base-min.css">
+    <link rel="stylesheet" href="assets/style.css">
 </head>
 
 <body>
@@ -17,7 +18,7 @@
         <h1>Find A Park</h1>
     </header>
     <section>
-        <aside class="leftAside">
+        <aside>
             <form class="pure-form">
                 <input type="text" class="pure-input-2-3" />
                 <button type="submit" class="pure-button">Search</button>
@@ -34,14 +35,27 @@
                 <button class="button-xlarge pure-button">placeholder</button>
             </form>
         </aside>
-        <aside class="rightAside">
+        <aside>
             <h3 class="parkName">Park Name</h3>
             <p class="address">Address: </p>
             <p class="contactInfo">Contact Information: </p>
         </aside>
     </section>
     <section class="centerSection">
-        <p>text</p>
+        <p class="parkDescription">Park Description: </p>
+    </section>
+    <section>
+        <aside>
+            <h3>Activities</h3>
+            <p class="activities">List</p>
+        </aside>
+        <aside>
+            <h3>Amenities</h3>
+            <p class="amenities">List</p>
+        </aside>
+    </section>
+    <section class="centerSection">
+        <div id="map">this is where the map lives</div>
     </section>
 
     <script src="assets/script.js"></script>
