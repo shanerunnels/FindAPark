@@ -9,6 +9,8 @@
     
     <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.3/build/pure-min.css"
         integrity="sha384-cg6SkqEOCV1NbJoCu11+bm0NvBRc8IYLRGXkmNrqUBfTjmMYwNKPWBTIKyw9mHNJ" crossorigin="anonymous">
+    <script type='text/javascript' src='https://www.bing.com/api/maps/mapcontrol?callback=GetMap&key=AuAUY4TlYbtPjllHt7cGntW5IMr_yCO4d9S-tKitFhKxHdprRwNZYtFufhBMdmkb' async defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.1/build/base-min.css">
     <link rel="stylesheet" href="assets/style.css">
 </head>
@@ -20,25 +22,15 @@
     <section>
         <aside class="firstAside">
             <form class="pure-form">
-                <input type="text" class="pure-input-2-3" />
-                <button type="submit" class="pure-button">Search</button>
+                <input type="text" id="state-input" class="pure-input-2-3" />
+                <button type="submit" id="search-btn" class="pure-button">Search</button>
             </form>
-            <form>
-                <button class="createBtn pure-button">placeholder</button>
-                <br>
-                <button class="createBtn pure-button">placeholder</button>
-                <br>
-                <button class="createBtn pure-button">placeholder</button>
-                <br>
-                <button class="createBtn pure-button">placeholder</button>
-                <br>
-                <button class="createBtn pure-button">placeholder</button>
-            </form>
+            <div id="stateBtns">
+                
+            </div>
         </aside>
-        <aside class="firstAside">
-            <h3 class="parkName">Park Name</h3>
-            <p class="address">Address: </p>
-            <p class="contactInfo">Contact Information: </p>
+        <aside class="firstAside parkInfo">
+            
         </aside>
     </section>
     <section class="centerSection">
@@ -58,7 +50,7 @@
         <div id="map">this is where the map lives</div>
     </section>
 
-    <script src="assets/script.js"></script>
+    <script src="assets/findparkscript.js"></script>
 </body>
 
 </html>
