@@ -1,6 +1,6 @@
 var NPSAPIKey = "4YnR8c2olMSt9dduqp0usId2Vcraoya48fL64NG4";
 
-var mapAPIKey = "AuAUY4TlYbtPjllHt7cGntW5IMr_yCO4d9S-tKitFhKxHdprRwNZYtFufhBMdmkb";
+
 
         
 
@@ -64,6 +64,12 @@ function displayParkInfo() {
 
         $(".parkInfo").empty();
 
+        $("#parkDescription").empty();
+
+        $("#parkActivities").empty();
+
+        
+
         var parkName = response.data[0].fullName;
 
         var nameP = $("<h3>").text(parkName);
@@ -104,9 +110,41 @@ function displayParkInfo() {
 
         $(".parkInfo").append(phoneP);
 
+        var parkDescript = response.data[0].description;
+
+        var descriptP = $("<p>").text(parkDescript);
+
+        $("#parkDescription").append(descriptP);
+
+        var activityHeader = $("<h3>").text("Activities");
+
+        $("#parkActivities").append(activityHeader);
+
+        for (var i = 0; i < 10; i++) {
+
+            var parkActivity = response.data[0].activities[i].name;
+
+            var activityP = $("<p>").text(parkActivity);
+
+            activityP.addClass("activities");
+
+            $("#parkActivities").append(activityP);
+
+        }
+
+        var feesHeader = $("<h3>").text("Fees");
+
+        $("#parkFees").append(feesHeader);
 
 
-        
+        var parkLat = response.data[0].latitude;
+
+        var parkLon = response.data[0].longitude;
+
+        GetMap(parkLat, parkLon);
+
+
+
 
     });
 
@@ -114,5 +152,24 @@ function displayParkInfo() {
 
 }
 
+function GetMap(lat, lon) {
+    var map = new Microsoft.Maps.Map('#myMap');
+
+
+    var map = new Microsoft.Maps.Map('#myMap', {
+        
+        center: new Microsoft.Maps.Location(lat, lon),
+        mapTypeId: Microsoft.Maps.MapTypeId.aerial,
+        zoom: 10
+    });
+
+    
+        
+
+
+
+
+    
+}
 
 $(document).on("click", ".createBtn", displayParkInfo);
