@@ -27,25 +27,22 @@ section {
 .firstAside {
     text-align: center;
     margin: 10px;
-    background-color: white;
-    height: 240.97px;
+    /* background-color: white; */
+    height: max-content;
     width: 50%;
 }
 
 .secondAside {
     text-align: center;
     margin: 10px;
-    background-color: white;
+    /* background-color: white; */
     height: max-content;
     width: 50%;
 }
 
 
 .centerSection {
+    text-align: center;
     margin: 10px;
-    background-color: white;
-}
-
-.parkDescription {
-    margin: 10px;
+    /* background-color: white; */
 }
