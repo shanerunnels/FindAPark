@@ -6,7 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Find a Park</title>
 
-    
+    <link 
+  href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.css" 
+  rel="stylesheet"  type='text/css'>
     <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.3/build/pure-min.css"
         integrity="sha384-cg6SkqEOCV1NbJoCu11+bm0NvBRc8IYLRGXkmNrqUBfTjmMYwNKPWBTIKyw9mHNJ" crossorigin="anonymous">
     <script type='text/javascript' src='http://www.bing.com/api/maps/mapcontrol?callback=GetMap&key=AuAUY4TlYbtPjllHt7cGntW5IMr_yCO4d9S-tKitFhKxHdprRwNZYtFufhBMdmkb' async defer></script>
@@ -22,8 +24,9 @@
     <section>
         <aside class="firstAside">
             <form class="pure-form">
-                <input type="text" id="state-input" class="pure-input-2-3" />
-                <button type="submit" id="search-btn" class="pure-button">Search</button>
+                <input type="text" id="state-input" class="pure-input-1-2" />
+                <button type="submit" id="search-btn"><i class="fa fa-search" aria-hidden="true"></i></button>
+                <button type="clear" id="clearBtn"><i class="fa fa-eraser" aria-hidden="true"></i></button>
             </form>
             <div id="stateBtns">
                 
