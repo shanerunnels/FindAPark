@@ -1,13 +1,13 @@
-var NPSAPIKey = "4YnR8c2olMSt9dduqp0usId2Vcraoya48fL64NG4";
+ar NPSAPIKey = "4YnR8c2olMSt9dduqp0usId2Vcraoya48fL64NG4";
 
-
+var mapDiv = $("#myMap");
 
         
 
 
 
 
-$("#search-btn").on("click", function(event) {
+u("#search-btn").on("click", function(event) {
 
     event.preventDefault();
         
@@ -23,23 +23,23 @@ $("#search-btn").on("click", function(event) {
         console.log(response);
         
 
-        $("#stateBtns").empty();    
+        u("#stateBtns").empty();    
 
     
         for (var i = 0; i < 5; i++) {
     
           
-          var button = $("<button>");
+          var button = u("<button>");
           
-          button.addClass("createBtn");
+          u(button).addClass("createBtn");
 
-          button.addClass("pure-button");
+          u(button).addClass("pure-button");
          
-          button.attr("data-name", response.data[i].parkCode);
+          u(button).attr("data-name", response.data[i].parkCode);
           
-          button.text(response.data[i].name);
+          u(button).text(response.data[i].name);
          
-          $("#stateBtns").append(button);
+          u("#stateBtns").append(button);
         }
 
 
@@ -51,7 +51,7 @@ $("#search-btn").on("click", function(event) {
 
 function displayParkInfo() {
 
-    var stateParkCode = $(this).attr("data-name");
+    var stateParkCode = u(this).attr("data-name");
 
     var parkCodeURL = "https://developer.nps.gov/api/v1/parks?parkCode=" + stateParkCode + "&api_key=" + NPSAPIKey;
 
@@ -62,29 +62,36 @@ function displayParkInfo() {
     }).then(function(response) {
         console.log(response);
 
-        $(".parkInfo").empty();
+        u(".parkInfo").empty();
 
-        $("#parkDescription").empty();
+        u("#parkDescription").empty();
 
-        $("#parkActivities").empty();
+        u("#parkActivities").empty();
 
-        
+        u("#parkHours").empty();
+
+        u(mapDiv).removeClass("hide");
+
 
         var parkName = response.data[0].fullName;
 
-        var nameP = $("<h3>").text(parkName);
+        var nameP = u("<h3>").text(parkName);
 
-        nameP.addClass("parkName");
+        u(nameP).addClass("parkName");
 
-        $(".parkInfo").append(nameP);
+        u(".parkInfo").append(nameP);
+
+
 
         var parkAddress = response.data[0].addresses[1].line1;
 
-        var addressPOne = $("<p>").text(parkAddress);
+        var addressPOne = u("<p>").text(parkAddress);
 
-        addressPOne.addClass("address");
+        u(addressPOne).addClass("address");
 
-        $(".parkInfo").append(addressPOne);
+        u(".parkInfo").append(addressPOne);
+
+
 
         var parkCity = response.data[0].addresses[1].city;
 
@@ -92,56 +99,152 @@ function displayParkInfo() {
 
         var parkZip = response.data[0].addresses[1].postalCode;
 
-        var addressPTwo = $("<p>").text(parkCity + ", " + parkState + " " + parkZip);
+        var addressPTwo = u("<p>").text(parkCity + ", " + parkState + " " + parkZip);
 
-        addressPTwo.addClass("address");
+        u(addressPTwo).addClass("address");
 
-        $(".parkInfo").append(addressPTwo);
+        u(".parkInfo").append(addressPTwo);
+
+
 
         var parkEmail = response.data[0].contacts.emailAddresses[0].emailAddress;
 
-        var emailP = $("<p>").text("Email: " + parkEmail);
+        var emailP = u("<p>").text("Email: " + parkEmail);
 
-        $(".parkInfo").append(emailP);
+        u(".parkInfo").append(emailP);
 
-        var parkPhone = response.data[0].contacts.phoneNumbers[0].phoneNumber;
 
-        var phoneP = $("<p>").text("Phone: " + parkPhone);
-
-        $(".parkInfo").append(phoneP);
+        
 
         var parkDescript = response.data[0].description;
 
-        var descriptP = $("<p>").text(parkDescript);
+        var descriptP = u("<p>").text(parkDescript);
 
-        $("#parkDescription").append(descriptP);
+        u("#parkDescription").append(descriptP);
 
-        var activityHeader = $("<h3>").text("Activities");
+        
 
-        $("#parkActivities").append(activityHeader);
+        
+     
+       
 
-        for (var i = 0; i < 10; i++) {
+        var hoursHeader = u("<h3>").text("Standard Hours");
 
-            var parkActivity = response.data[0].activities[i].name;
+        u("#parkHours").append(hoursHeader);
 
-            var activityP = $("<p>").text(parkActivity);
 
-            activityP.addClass("activities");
+        var sundayHours = response.data[0].operatingHours[0].standardHours.sunday;
 
-            $("#parkActivities").append(activityP);
+        var sundayP = u("<p>").text("Sunday: " + sundayHours);
 
-        }
+        u(sundayP).addClass("amenities");
 
-        var feesHeader = $("<h3>").text("Fees");
+        u("#parkHours").append(sundayP);
 
-        $("#parkFees").append(feesHeader);
+
+        var mondayHours = response.data[0].operatingHours[0].standardHours.monday;
+
+        var mondayP = u("<p>").text("Monday: " + mondayHours);
+
+        u(mondayP).addClass("amenities");
+
+        u("#parkHours").append(mondayP);
+
+
+        var tuesdayHours = response.data[0].operatingHours[0].standardHours.tuesday;
+        
+        var tuesdayP = u("<p>").text("Tuesday: " + tuesdayHours);
+
+        u(tuesdayP).addClass("amenities");
+
+        u("#parkHours").append(tuesdayP);
+
+
+        var wednesdayHours = response.data[0].operatingHours[0].standardHours.wednesday;
+
+        var wednesdayP = u("<p>").text("Wednesday: " + wednesdayHours);
+
+        u(wednesdayP).addClass("amenities");
+
+        u("#parkHours").append(wednesdayP);
+
+
+        var thursdayHours = response.data[0].operatingHours[0].standardHours.thursday;
+
+        var thursdayP = u("<p>").text("Thursday: " + thursdayHours);
+
+        u(thursdayP).addClass("amenities");
+
+        u("#parkHours").append(thursdayP);
+
+
+
+        var fridayHours = response.data[0].operatingHours[0].standardHours.friday;
+
+        var fridayP = u("<p>").text("Friday: " + fridayHours);
+
+        u(fridayP).addClass("amenities");
+
+        u("#parkHours").append(fridayP);
+
+
+
+        var saturdayHours = response.data[0].operatingHours[0].standardHours.saturday;
+
+        var saturdayP = u("<p>").text("Saturday: " + saturdayHours);
+
+        u(saturdayP).addClass("amenities");
+
+        u("#parkHours").append(saturdayP);
+
 
 
         var parkLat = response.data[0].latitude;
 
         var parkLon = response.data[0].longitude;
 
-        GetMap(parkLat, parkLon);
+        if (!parkLat && !parkLon){
+
+            u(mapDiv).addClass("hide");
+        } else {
+            GetMap(parkLat, parkLon, parkName);
+
+        }
+
+        
+
+
+
+        var activityHeader = u("<h3>").text("Activities");
+
+        u("#parkActivities").append(activityHeader);
+
+        for (var i = 0; i < 5; i++) {
+
+            var parkActivity = response.data[0].activities[i].name;
+
+            var activityP = u("<p>").text(parkActivity);
+
+            u(activityP).addClass("activities");
+
+            u("#parkActivities").append(activityP);
+
+        }  
+        
+        
+        
+       
+
+        var parkPhone = response.data[0].contacts.phoneNumbers[0].phoneNumber;
+
+    
+
+        var phoneP = u("<p>").text("Phone: " + parkPhone);
+                
+
+        u(".parkInfo").append(phoneP);
+
+ 
 
 
 
@@ -152,24 +255,33 @@ function displayParkInfo() {
 
 }
 
-function GetMap(lat, lon) {
-    var map = new Microsoft.Maps.Map('#myMap');
 
+function GetMap(lat, lon, name)
+    {
+        var map = new Microsoft.Maps.Map('#myMap');
 
-    var map = new Microsoft.Maps.Map('#myMap', {
+        var map = new Microsoft.Maps.Map('#myMap', {
         
         center: new Microsoft.Maps.Location(lat, lon),
         mapTypeId: Microsoft.Maps.MapTypeId.aerial,
         zoom: 10
-    });
+        });
 
-    
-        
+        var center = map.getCenter();
+
+        var pin = new Microsoft.Maps.Pushpin(center, {
+            title: name,
+            
+        });
+
+        //Add the pushpin to the map
+        map.entities.push(pin);
+
+    }
 
 
 
 
-    
-}
 
-$(document).on("click", ".createBtn", displayParkInfo);
+
+u(document).on("click", ".createBtn", displayParkInfo);
