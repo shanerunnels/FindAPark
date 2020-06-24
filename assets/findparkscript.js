@@ -1,4 +1,4 @@
-ar NPSAPIKey = "4YnR8c2olMSt9dduqp0usId2Vcraoya48fL64NG4";
+var NPSAPIKey = "4YnR8c2olMSt9dduqp0usId2Vcraoya48fL64NG4";
 
 var mapDiv = $("#myMap");
 
