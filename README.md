@@ -1,33 +1,7 @@
 ## FIND A PARK
 
-# description 
-An app that allows users to find parks in their state
+# Description 
+This application was created to show the user the various state parks around the country.  Most people love the outdoors, but only know about a couple of the beautiful state parks in our country.  So this app allows the user to explore unknown (to them) parks.  The user can then decide if the particular park they are looking at is worth visiting.  This application was created using: HTML, CSS, PureCSS, Javascript, jQuery, Umbrella.js, as well as, utilizing the APIs provided by the National Park Services, and Bing Maps.  This was a group project and was a great lesson in learning to work together towards a common goal.
 
-# user story
-
-AS a lover of nature
-I want an application that can 
-LOCATE national parks in my state
-
-WHEN I click on the input form.
-I can enter the state.
-THEN when I click the search button.
-buttons are created for parks in my state.
-WHEN I click on a park button
-THEN info for that park will show up.
-
-# wire frame 
-
-header - Find A Park.
-below that.
-Left div - input for state and search button and five options buttons created. 
-right div - State park name, address, and contact info.
-below that.
-centered div - brief description and/or history of park.
-below that.
-left div - list of 3 activities.
-right div - list of 3 amenities.
-below that.
-centered div - a detailed map showing parks location.
-
-API's used - Bing Maps, NPS api. 
+# Use
+When the user opens the application, they will see an input form on the left of the screen where they will be told to input the appreviation of the state they would like to explore.  Once they have selected their state, up to five buttons will be created below the input, each with a name of the park in the state chosen.  As the user clicks each button, various information will appear on the page.  This information ranges from, contact info, park hours, various activities that can be done, along with a map showing where the state park is located.
