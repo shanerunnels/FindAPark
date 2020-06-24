@@ -5,8 +5,12 @@ body {
 }
 
 header {
-    margin: 0;
     text-align: center;
+    margin: 10px;
+    padding: 5px;
+    background-color: #FCF3CF;
+    border-radius: 50px;
+    box-shadow: 5px 5px;
 }
 
 .createBtn {
@@ -29,9 +33,10 @@ section {
     text-align: center;
     margin: 10px;
     background-color: #FCF3CF;
-    height: 248px;
+    height: 350px;
     width: 50%;
     border-radius: 50px;
+    box-shadow: 5px 5px;
 }
 
 .secondAside {
@@ -41,6 +46,7 @@ section {
     height: 300px;
     width: 50%;
     border-radius: 50px;
+    box-shadow: 5px 5px;
 }
 
 
@@ -50,6 +56,7 @@ section {
     padding: 0px 30px;
     background-color: #FCF3CF;
     border-radius: 50px;
+    box-shadow: 5px 5px;
 }
 
 .bottomCenterSection {
